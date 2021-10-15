@@ -3,10 +3,16 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+
+
 import Listing from './Pages/Listing';
 import LandingPage from './Pages/LandingPage';
 import OtherPage from './Pages/OtherPage';
 import Layout from './Components/Layout/Layout';
+
+
 
 
 
