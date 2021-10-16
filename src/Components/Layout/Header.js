@@ -3,6 +3,7 @@ import Logo from '../../assets/images/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { faBars,faSearch,faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,7 +13,7 @@ const Header = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-3">
-                                <img src={Logo}></img>
+                            <Link to='/landingpage'><img src={Logo}></img></Link>
                             </div>
                             <div className="col-6 d-flex justify-content-center">
                                 <div className="searchbox">
