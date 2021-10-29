@@ -4,6 +4,7 @@ import MenuIcon from '../../assets/images/menu-white.png'
 import { useState, useEffect, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+import {Link} from 'react-router-dom';
 
 
 const MainNavigation = () => {
@@ -32,7 +33,7 @@ const MainNavigation = () => {
         fetchNav();
     }, [fetchNav]);
 
-    const menuItems = menu.map((d) => <li><a key={d}>{d}</a></li>);
+    const menuItems = menu.map((d) => <Link to='/listing'><li><a key={d}>{d}</a></li></Link>);
 // console.log(key);
 
     return (

@@ -21,20 +21,25 @@ const Solutions = () => {
     const fetchSol = useCallback(async () => {
 
         try {
-            const response = await fetch('https://sap-erp-73adc-default-rtdb.asia-southeast1.firebasedatabase.app/solutions.json');
+            const response = await fetch('https://sapapi.scrubskp.com/api/listing',{ mode: 'cors'})
             if (!response.ok) {
+                console.log('sda');
                 throw new Error('Something went wrong!');
             }
-
+            // console.log(response);
             const data = await response.json();
-
+            console.log(data);
             const loadedSolutions = [];
             for (const key in data) {
+                let cats = data[key].categories.map(c =>{
+                    return c.name
+                });
                 loadedSolutions.push({
                     id: key,
+                    icon: data[key].iconUrl,
                     name: data[key].name,
-                    category: data[key].category,
-                    industry: data[key].industry,
+                    description: data[key].description,
+                    category: cats[0]
                 });
             }
 
@@ -87,10 +92,10 @@ const Solutions = () => {
         <div className="col item">
             <div className="card ">
                 <div className="card-body ">
-                    <img src={p1} />
+                    <img key={d} src={d.icon} />
                     <h2 key={d}>{d.name}</h2>
-                    <p>Free trail gives insight across end-to-end bussiness process in a variety</p>
-                    <h3 key={d}>Category:{d.category} Industry:{d.industry}</h3>
+                    <p key={d}>{d.description}</p>
+                    <h3 key={d}>Category: {d.category}</h3>
                 </div>
             </div>
         </div>
@@ -99,10 +104,10 @@ const Solutions = () => {
         <div className="col item">
             <div className="card ">
                 <div className="card-body ">
-                    <img src={p1} />
+                    <img key={d} src={d.icon} />
                     <h2 key={d}>{d.name}</h2>
-                    <p>Free trail gives insight across end-to-end bussiness process in a variety</p>
-                    <h3 key={d}>Category:{d.category} Industry:{d.industry}</h3>
+                    <p key={d}>{d.description}</p>
+                    <h3 key={d}>Category: {d.category}</h3>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons';
 
 const Filters =()=>{
-    let category=["Aerospace", "Cybersecurity", "Nanophysics"];
+    let category=["Analytics", "Accounting and Financial Close", "Application Development and Integration", "CRM and Customer Experience", "Procurement"];
     let industry=["Industry 1", "Industry 2", "Industry 3"];
     const catRef= useRef([]);
     const indRef= useRef([]);
