@@ -23,12 +23,11 @@ const Solutions = () => {
         try {
             const response = await fetch('https://sapapi.scrubskp.com/api/listing',{ mode: 'cors'})
             if (!response.ok) {
-                console.log('sda');
                 throw new Error('Something went wrong!');
             }
             // console.log(response);
             const data = await response.json();
-            console.log(data);
+           
             const loadedSolutions = [];
             for (const key in data) {
                 let cats = data[key].categories.map(c =>{
@@ -55,14 +54,10 @@ const Solutions = () => {
         fetchSol();
     }, [fetchSol]);
 
-    console.log("filters");
-    console.log(filters);
-
     let filteredSolutions = [...fetchedSolutions];
 
     filteredSolutions = filteredSolutions.filter((f) => (filters.includes(f.category)) || (filters.includes(f.industry)));
-    console.log("filtered");
-    console.log(filteredSolutions);
+   
     const displayCount = () => {
         if (filteredSolutions.length > 0) {
             const count = filteredSolutions.length;
