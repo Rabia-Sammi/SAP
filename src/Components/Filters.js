@@ -66,15 +66,22 @@ const Filters = () => {
         }
     }
   
-       
+        console.log(Filters);
         for (const key in Filters)
         {
-
 
         const subFilters= Filters[key].map(c =>{
             return c.name
         });      
-        console.log("subfilters"+ subFilters);
+        
+        const subFil = subFilters.map((fil, i) =>
+        <li className="box">
+
+            <input name={fil} value={fil} type="checkbox"  onChange={setFilterHandler} className="check-box" />
+            <lable>{fil}</lable>
+
+        </li>);
+        
         const item=
                 <li className="dropdown" >
                     <a className="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -88,11 +95,12 @@ const Filters = () => {
                                 </div>
                             </form>
                         </li>
-                        {subFilters}
+                        {subFil}
                     </ul>
                 </li >    
         
         modFilters.push(item); 
+        console.log("modFilter" +  modFilters);
 
             
         // );
