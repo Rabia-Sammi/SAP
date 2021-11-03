@@ -66,9 +66,10 @@ const Filters = () => {
         }
     }
   
-        console.log(Filters);
+        
         for (const key in Filters)
         {
+        const modKey=key.charAt(0).toUpperCase() + key.slice(1);    
 
         const subFilters= Filters[key].map(c =>{
             return c.name
@@ -83,9 +84,9 @@ const Filters = () => {
         </li>);
         
         const item=
-                <li className="dropdown" >
+                    <li className="dropdown" >
                     <a className="" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">{key}<span><i><FontAwesomeIcon icon={faChevronDown} /></i></span></a>
+                        aria-expanded="false">{modKey}<span><i><FontAwesomeIcon icon={faChevronDown} /></i></span></a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
                             <form>
@@ -100,10 +101,6 @@ const Filters = () => {
                 </li >    
         
         modFilters.push(item); 
-        console.log("modFilter" +  modFilters);
-
-            
-        // );
        }
 
        
