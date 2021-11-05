@@ -923,7 +923,8 @@ color: black;
 .filter .nav-bar{background-color:white;}
 .filter .nav-bar .nav-menu{justify-content: center;}
 .filter .nav-bar .nav-menu ul li{padding-left: 12px; padding-right: 12px;}
-.filter .nav-bar .nav-menu div > ul > li:hover{text-shadow: none; font-weight:bold ;}
+.filter .nav-bar .nav-menu ul li.dropdown:hover{text-shadow: none;}
+
 .filter .nav-bar .nav-menu ul li a{color:black; padding: 0px 10px;}
 .filter .nav-bar ul li span i{position:absolute; bottom: -2px; padding-left: 5px;}
 .filter .nav-bar .nav-menu button{padding: 5px; width: 100%; justify-content: center;}
@@ -931,11 +932,13 @@ color: black;
 .filter .nav-bar .nav-menu button span i{color: black; font-size: 15px;} 
 
 .filter li.dropdown a:after{content:none;}
+.filter li.dropdown ul {height: 250px; width: auto; overflow: auto;}
 .filter .nav-bar .nav-menu  li.dropdown ul li{margin:0px;}
 .filter .dropdown .search {display: inline-flex; border:1px solid blue; padding: 5px 15px;}
 .filter .dropdown .search input{border: none; width:300px;}
 .filter .dropdown .search span i{position: static; text-align: right; }
 .filter .dropdown .check-box{margin-right:5px; zoom: 1.5;}
+
 .filter .nav-bar .nav-menu .box:hover{background-color:lightgrey;}
 .filter .box{padding:10px 2px; display: flex;}
 .filter .dropdown-menu{position: absolute; top: 38px;}

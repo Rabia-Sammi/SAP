@@ -4,7 +4,7 @@ import p1 from '../../src/assets/images/p1.png';
 import { useDispatch } from 'react-redux';
 import { filterActions } from '../store/filterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes} from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -21,16 +21,16 @@ const Solutions = () => {
     const fetchSol = useCallback(async () => {
 
         try {
-            const response = await fetch('https://sapapi.scrubskp.com/api/listing',{ mode: 'cors'})
+            const response = await fetch('https://sapapi.scrubskp.com/api/listing', { mode: 'cors' })
             if (!response.ok) {
                 throw new Error('Something went wrong!');
             }
             // console.log(response);
             const data = await response.json();
-           
+
             const loadedSolutions = [];
             for (const key in data) {
-                let cats = data[key].categories.map(c =>{
+                let cats = data[key].categories.map(c => {
                     return c.name
                 });
                 loadedSolutions.push({
@@ -57,7 +57,7 @@ const Solutions = () => {
     let filteredSolutions = [...fetchedSolutions];
 
     filteredSolutions = filteredSolutions.filter((f) => (filters.includes(f.category)) || (filters.includes(f.industry)));
-   
+
     const displayCount = () => {
         if (filteredSolutions.length > 0) {
             const count = filteredSolutions.length;
@@ -69,9 +69,7 @@ const Solutions = () => {
 
     }
     const removeFilterHandler = (event) => {
-      
-        dispatch(filterActions.removeFilter(event.target.id));
-        
+        dispatch(filterActions.removeFilter(String(event.target.innerText).trim()));
     }
 
     const renderSol = () => {
@@ -109,7 +107,7 @@ const Solutions = () => {
     );
 
     const filterTags = filters.map((f) =>
-        <li id={f} role="button" onClick={removeFilterHandler}>{f} <span id={f}><i id={f}><FontAwesomeIcon icon={faTimes} /></i></span></li>);
+        <li id={f} role="button" onClick={removeFilterHandler}>{f} <span><i id={f}><FontAwesomeIcon icon={faTimes} /></i></span></li>);
 
     // Mapping End  
 
@@ -152,8 +150,8 @@ const Solutions = () => {
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                <button class="yellowBtn">Get Started</button>
-            </div>
+                    <button class="yellowBtn">Get Started</button>
+                </div>
             </div>
         </div>
 
