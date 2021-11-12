@@ -104,7 +104,7 @@ const DeatailPage = () => {
                             <h3>Validate, automate and route to downstrem systems</h3>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
                                 reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptat provident laborum eligendi!</p>
-                            <a href>More Benefits</a>
+                            <a href="#">More Benefits</a>
                         </div>
                     </div>
                 </div>
