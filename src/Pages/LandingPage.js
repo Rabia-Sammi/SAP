@@ -20,9 +20,6 @@ import b5 from '../../src/assets/images/b5.svg';
 import dell1 from '../../src/assets/images/dell-1.png';
 
 
-
-
-
 const LandingPage = () => {
     return (
         <div>

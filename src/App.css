@@ -963,3 +963,72 @@ color: black;
 @media only screen and (max-width: 900px){
   .filter .navbar-nav li a span {text-align: right; display: block; }
 }
+
+
+/* Detail Page */
+
+.nav-detail { color:grey; padding-top: 8px; border-bottom: 1px solid lightgray}
+.nav-detail ul{ display: flex;  justify-content: left;}
+.nav-detail li{ padding:7px;}
+.nav-detail li:last-child{padding-right: 0px;}
+.nav-detail li a{
+    color: grey;
+    font-family: 'corehumanistsans';
+    text-decoration: none;
+    font-size: 15px;
+}
+.nav-detail li:hover{border: 1px solid #007CB8;}
+.review{display: flex; align-items: flex-end; }
+.review img{height:50px;}
+.review h1{
+    font-size: 10px;
+    color:Black;
+    padding:0px;
+}
+.review h2{font-size: 8px;color:grey;}
+.s-section { color:rgb(110, 109, 109); padding-bottom: 60px; border-bottom:1px solid lightgray;}
+.s-section{padding-top: 30px;}
+.s-section h1{padding:0px; margin-bottom:15px; font-size:30px; font-weight: normal; text-align: left; color:black}
+.s-section h2{color: lightgrey; font-size: 15px;}
+.s-section h3{font-size: 15px;}
+.s-section p{padding: 20px 0px;}
+
+.btn-blue{
+    background-color: #007CB8 ;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.bnf{padding: 60px 300px; ;}
+.bnf h1{ text-align: center; padding-top: 0px;}
+.bnf h2{font-size: 12px; color:darkgray; padding: 10px 0px;}
+.bnf h3, .features h3{font-size: 20px;}
+.bnf p, .features p{color :rgb(110, 109, 109); padding:10px 0px;}
+.bnf a{color:#007CB8; text-decoration: none;}
+
+.features {text-align: left; padding:60px 70px; border-bottom: 1px solid lightgray }
+.features .align-md{display: flex; align-items: center; padding-bottom:100px;}
+.features .align-md:last-child{display: flex; align-items: center; padding-bottom:0px;}
+.features img{width: 100%;}
+
+.p-left{padding-left: 50px;} 
+.p-right{padding-right: 50px;} 
+
+.pricing{text-align: center; padding: 60px 375px;}
+.pricing h1 { padding: 0px 0px 30px 0px;}
+.pricing ul{list-style-type: none; text-align: left;}
+.pricing ul li {font-size: 15px; color:grey; padding-bottom: 15px;}
+.pricing ul li i {color:black; padding-right: 10px;}
+.pricing h5{font-size: 14px; color: grey;}
+.pricing h3{ font-size: 30px; color: #E0A813;}
+.pricing h3 span { font-size: 17px; padding-right: 10px;}
+.pricing button {padding: 7px 50px; margin-top: 20px;}
+
+@media only screen and (max-width: 900px){
+  .pricing{ padding: 60px 5px;}
+  .p-right {margin-bottom: 30px;}
+  .features { padding:0px;}
+  .features .align-md{padding-bottom: 30px;}
+}
+

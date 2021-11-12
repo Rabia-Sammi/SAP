@@ -5,15 +5,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-
-
 import Listing from './Pages/Listing';
 import LandingPage from './Pages/LandingPage';
 import OtherPage from './Pages/OtherPage';
 import Layout from './Components/Layout/Layout';
-
-
-
+import DetailPage from './Pages/DetailPage';
 
 
 function App() {
@@ -29,8 +25,8 @@ function App() {
           <Route path='/listing'>
             <Listing />
           </Route>
-          <Route path='/other'>
-            <OtherPage />
+          <Route path='/detailpage'>
+            <DetailPage />
           </Route>
         </Switch>
         </Layout>

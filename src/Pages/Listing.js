@@ -7,7 +7,6 @@ import Solutions from '../Components/Solutions';
 const Listing = () => {
 
     return (
-
         <Fragment>
             <Filters></Filters>
             <div className="listing-main">

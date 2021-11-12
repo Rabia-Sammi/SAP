@@ -33,9 +33,17 @@ const MainNavigation = () => {
         fetchNav();
     }, [fetchNav]);
 
-    const menuItems = menu.map((d) => <Link to='/listing'><li><a key={d}>{d}</a></li></Link>);
-// console.log(key);
-
+    const menuItems = menu.map((d) =>{
+    if (d=="Showcased Solutions")
+    return(<Link to='/listing'><li><a key={d}>{d}</a></li></Link>);
+     
+     else if (d=="Popular on Store")
+     return (<Link to='/DetailPage'><li><a key={d}>{d}</a></li></Link>);
+     else
+     return(<li><a key={d}>{d}</a></li>);
+        
+    });
+    
     return (
         <div id="navDesk" className="nav-bar">
             <div className="container">
