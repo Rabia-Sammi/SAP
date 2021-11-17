@@ -991,7 +991,8 @@ color: black;
 .s-section .s-text{padding-right: 25px;}
 .s-section .s-text h1{padding:0px; margin-bottom:15px; font-size:40px; text-align: left;}
 .s-section .s-text p{padding: 20px 0px;}
-.s-section .s-img{padding-left: 25px;}
+.s-section .s-img{padding-left: 45px;}
+.s-section img{max-width: 100%;}
 
 .s-section button{
     background-color: white ;
@@ -1001,39 +1002,50 @@ color: black;
     border: none;
 }
 
-.benefit{padding-top: 30px;}
+.benefit{padding-top: 30px;  background-color: #FBFAF8;}
 .benefit h1{text-align: left; padding-left: 0px; padding-bottom: 0px;}
-.benefit .bnf{ display: flex; flex-wrap: wrap; width: 100%;}
+.benefit .bnf, .tech .bnf{ display: flex; flex-wrap: wrap; width: 100%;}
 /* .benefit .bnf:nth-child(2n){ padding-left:100px;} */
-.benefit .ben{ width: 50%; min-height: 100px; padding: 15px 50px 15px 0px;} 
-
+.benefit .ben { width: 50%; min-height: 100px; padding: 15px 50px 15px 0px;} 
 .benefit .bnf h3, .features h3{font-size: 20px;}
 .benefit .bnf p, .features p{color :rgb(110, 109, 109); padding:10px 0px;}
 .benefit  .bnf a{color:#007CB8; text-decoration: none;}
 
-.features {text-align: left; padding:60px 70px; }
+.features {text-align: left; background-color: #FBFAF8;}
 .features h1{text-align: left;padding-left: 0px;}
-/* .features .align-md{display: flex; align-items: center; padding-bottom:100px;}
-.features .align-md:last-child{display: flex; align-items: center; padding-bottom:0px;} */
-.features img{width: 100%;}
+.features .align-md{display: flex; align-items: center; padding-bottom:100px;}
+.features img{width: 90%;}
+.features .row{padding-bottom: 80px;}
 
 .p-left{padding-left: 50px;} 
 .p-right{padding-right: 50px;} 
 
-.pricing{text-align: center; padding: 60px 375px;}
-.pricing h1 { padding: 0px 0px 30px 0px;}
-.pricing ul{list-style-type: none; text-align: left;}
-.pricing ul li {font-size: 15px; color:grey; padding-bottom: 15px;}
-.pricing ul li i {color:black; padding-right: 10px;}
-.pricing h5{font-size: 14px; color: grey;}
-.pricing h3{ font-size: 30px; color: #E0A813;}
-.pricing h3 span { font-size: 17px; padding-right: 10px;}
-.pricing button {padding: 7px 50px; margin-top: 20px;}
+
+.tech h1{ text-align: left; padding-top: 0px;}
+.tech h4{ font-size: 15px; }
+.tech p{ color: grey; padding: 0px;}
+.tech .txt{ padding-left: 50px;}
+.tech .activeBtn{padding-right: 80px;}
+.tech .info{ width:50%; padding:30px 0px 0px 80px;}
+
+.resource{ background-color:#3C7088; padding-bottom: 60px;}
+.resource h1{color: white;}
+.resource h3{font-size: 23px;}
+.resource p{    font-weight: bold; font-size: 14px;}
+.resource .card{background-color: white; border-radius: 8px; border: none; padding: 23px; height: 190px; justify-content: space-around;} 
+.resource .card a{color: #007CB8; align-items: flex-end; text-decoration: none; font-weight: bold;}
 
 @media only screen and (max-width: 900px){
-  .pricing{ padding: 60px 5px;}
-  .p-right {margin-bottom: 30px;}
-  .features { padding:0px;}
+  
   .features .align-md{padding-bottom: 30px;}
+  .s-section .s-img{padding-left: 0px; padding-top: 20px;}
+  .benefit .ben {width: 100%; padding: 15px 0px 5px 0px;}
+  .tech ul{display: block;}
+  .tech ul li{padding: 0px;} 
+  .tech .info{ width: 100%; padding:30px 0px 0px 0px;}
+  .tech h1{padding: 0px;}
+  .resource .card{margin-bottom: 15px;} 
+  .features img{ width: 100%; padding-bottom: 20px;}
+  .features .row{padding-bottom: 10px;}
 }
 

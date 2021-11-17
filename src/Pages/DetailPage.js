@@ -7,6 +7,7 @@ import sym from '../../src/assets/images/sym.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { bottom } from '@popperjs/core';
 
 const DeatailPage = () => {
     return (
@@ -102,58 +103,125 @@ const DeatailPage = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             {/* <!-- End Benefit Section --> */}
 
-                {/* <!-- Features --> */}
-                <div className="features">
-                <h1>Key Features</h1>
-                    <div className="container">
+            {/* <!-- Features --> */}
+            <div className="features">
+                <div className="container">
+                    <h1>Key Features</h1>
                     <div className="row">
-                        <div className="col-12 col-lg-6 p-right">
+                        <div className="col-12 col-lg-4 p-left">
+                            <img src={f1} />
+                        </div>
+                        <div className="col-12 col-lg-8 p-right">
                             <h3>Virtual Mailroom Scanning and Classification </h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                                 quam provident culpa temporibus nostrum repellendus non voluptatibus odit beatae assumenda
                         voluptas dignissimos quo voluptate aut? Inventore, iste.</p>
                         </div>
-                        <div className="col-12 col-lg-6 p-left">
-                            <img src={ss} />
-                        </div>
                     </div>
-                    <div className="row align-md">
-                        <div className="col-12 col-lg-6 p-right">
+                    <div className="row ">
+                        <div className="col-12 col-lg-4 p-left">
                             <img src={f1} />
                         </div>
-                        <div className="col-12 col-lg-6 p-left">
-                            <h3>Raw Data Capture</h3>
+                        <div className="col-12 col-lg-8 p-right">
+                            <h3>Virtual Mailroom Scanning and Classification </h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                                 quam provident culpa temporibus nostrum repellendus non voluptatibus odit beatae assumenda
                         voluptas dignissimos quo voluptate aut? Inventore, iste.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            {/* <!-- End Features --> */}
+
+            {/* Tech Information Section */}
+            <div className="tech f-sec">
+                <h1>Technical Information</h1>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-lg-2 pt-5">
+                            <ul>
+                                <li><button className="activeBtn">General Information</button></li>
+                                <li><button>Deployment</button></li>
+                                <li><button>Operation</button></li>
+                                <li><button>Security</button></li>
+                                <li><button>Compliance</button></li>
+                            </ul>
+                        </div>
+                        <div className="col-12 col-lg-10 pt-5" style={{ backgroundColor: "#F0EFED" }} >
+                            <div className="row">
+                                <div className="bnf">
+                                    <div className="info">
+                                        <h4>User Assisstance Provided</h4>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facil
+                                </p>
+                                    </div>
+
+                                    <div className="info">
+                                        <h4>Deployed at scale on device</h4>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
+                                            quam provident culpa.
+                                        </p>
+                                    </div>
+                                    <div className="info">
+                                        <h4>Integrate with SAP cloud solutions</h4>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
+                                            quam provident
+                                        </p>
+                                    </div>
+                                    <div className="info">
+                                        <h4>Software-as-a-service solution</h4>
+                                        <p>
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
+                                           
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {/* <!-- End Features --> */}
+            </div>
+            {/* End Tech Info Section */}
 
-                {/* <!-- Pricing Section --> */}
-                <div className="pricing">
-                    <h1>Plans and Pricing</h1>
-                    <h1>Virtual Mailroom (Entry Level)</h1>
-                    <ul>
-                        <li><i><FontAwesomeIcon icon={faCheck} /></i>Manual and Email Receiving</li>
-                        <li><i><FontAwesomeIcon icon={faCheck} /></i>Scanning</li>
-                        <li><i><FontAwesomeIcon icon={faCheck} /></i>Document Destruction</li>
-                        <li><i><FontAwesomeIcon icon={faCheck} /></i>FTP Scanner</li>
-                    </ul>
-                    <h5>From</h5>
-                    <h3><span>USD</span>7000<span>.00</span></h3>
-                    <h5>Per Month</h5>
-                    <button className="btn-blue">Contact Support</button>
+            {/* Resources Section */}
+            <div className="resource">
+                <div class="container">
+                    <h1>Resources</h1>
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="card">
+                                <p>Supply Chain Management</p>
+                                <h3>SAP Certified Integration</h3>
+                                <a href="#">Explore More</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="card">
+                                <p>Supply Chain Management</p>
+                                <h3>SAP Certified Integration</h3>
+                                <a href="#">Explore More</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="card">
+                                <p>Supply Chain Management</p>
+                                <h3>SAP Certified Integration</h3>
+                                <a href="#">Explore More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {/* <!-- End Pricing Section --> */}
-        
+            </div>
+            {/* End Resources Section */}
+
         </Fragment>
     )
 };
