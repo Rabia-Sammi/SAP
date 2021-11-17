@@ -7,7 +7,7 @@ import sym from '../../src/assets/images/sym.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { bottom } from '@popperjs/core';
+
 
 const DeatailPage = () => {
     return (
@@ -15,7 +15,7 @@ const DeatailPage = () => {
             <div className="container">
                 <div className="nav-detail">
                     <div className="row">
-                        <div className="col-5">
+                        <div className="col-6 col-lg-4">
                             <div className="prod">
                                 <div>
                                     <img src={sym} />
@@ -26,7 +26,7 @@ const DeatailPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-7">
+                        <div className="col-6 col-lg-8 d-flex justify-content-end">
                             <nav className="navbar navbar-expand-lg">
                                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
@@ -56,7 +56,7 @@ const DeatailPage = () => {
                     <div className="row">
                         <div className="col-12 col-lg-6">
                             <div className="s-text">
-                                <h1>Digital Customar Experience</h1>
+                                <h1>Digital Customer Experience</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit veniam accusantium neque nemo
                                 velit veritatis sit perspiciatis dicta quod maxime?
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dignissimos mollitia harum distinctio fuga nemo, repudiandae animi error, sequi repellat vitae officia eius. Quo molestias incidunt animi doloribus dolorem aliquid, eligendi consequatur laboriosam cupiditate dignissimos magnam quis nemo quaerat nobis temporibus nesciunt at quia reiciendis est rem quos ea accusamus?</p>
@@ -140,8 +140,9 @@ const DeatailPage = () => {
 
             {/* Tech Information Section */}
             <div className="tech f-sec">
-                <h1>Technical Information</h1>
+               
                 <div className="container">
+                <h1>Technical Information</h1>
                     <div className="row">
                         <div className="col-12 col-lg-2 pt-5">
                             <ul>
@@ -154,36 +155,34 @@ const DeatailPage = () => {
                         </div>
                         <div className="col-12 col-lg-10 pt-5" style={{ backgroundColor: "#F0EFED" }} >
                             <div className="row">
-                                <div className="bnf">
-                                    <div className="info">
+                                <ul className="bnf">
+                                    <li className="info">
                                         <h4>User Assisstance Provided</h4>
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facil
-                                </p>
-                                    </div>
-
-                                    <div className="info">
+                                        </p>
+                                    </li>
+                                    <li className="info">
                                         <h4>Deployed at scale on device</h4>
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                                             quam provident culpa.
                                         </p>
-                                    </div>
-                                    <div className="info">
+                                    </li>
+                                    <li className="info">
                                         <h4>Integrate with SAP cloud solutions</h4>
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                                             quam provident
                                         </p>
-                                    </div>
-                                    <div className="info">
+                                    </li>
+                                    <li className="info">
                                         <h4>Software-as-a-service solution</h4>
                                         <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                           
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates   
                                         </p>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

@@ -984,14 +984,14 @@ color: black;
 .nav-detail .prod{display: flex; align-items: flex-end; }
 .nav-detail .prod img{height:60px;}
 .nav-detail .prod .prod-name{ padding-left: 10px; }
-.nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 14px;}
+.nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 14px;text-align: left;}
 .nav-detail .prod .prod-name h2{color:grey; font-size: 14px; font-weight: normal;}
 
 .s-section { color:white; background-color: #3C7088 ; padding: 60px 0px 60px 0px; }
 .s-section .s-text{padding-right: 25px;}
 .s-section .s-text h1{padding:0px; margin-bottom:15px; font-size:40px; text-align: left;}
 .s-section .s-text p{padding: 20px 0px;}
-.s-section .s-img{padding-left: 45px;}
+.s-section .s-img{padding-left: 45px; text-align: center;}
 .s-section img{max-width: 100%;}
 
 .s-section button{
@@ -1021,7 +1021,7 @@ color: black;
 .p-right{padding-right: 50px;} 
 
 
-.tech h1{ text-align: left; padding-top: 0px;}
+.tech h1{ text-align: left; padding-top: 0px; padding-left: 0px;}
 .tech h4{ font-size: 15px; }
 .tech p{ color: grey; padding: 0px;}
 .tech .txt{ padding-left: 50px;}
@@ -1031,9 +1031,9 @@ color: black;
 .resource{ background-color:#3C7088; padding-bottom: 60px;}
 .resource h1{color: white;}
 .resource h3{font-size: 23px;}
-.resource p{    font-weight: bold; font-size: 14px;}
+.resource p{font-weight: bold; font-size: 14px;}
 .resource .card{background-color: white; border-radius: 8px; border: none; padding: 23px; height: 190px; justify-content: space-around;} 
-.resource .card a{color: #007CB8; align-items: flex-end; text-decoration: none; font-weight: bold;}
+.resource .card a{color: #007CB8; align-items: flex-end; text-decoration: none; font-weight: bold; font-size: 14px;}
 
 @media only screen and (max-width: 900px){
   

@@ -23,7 +23,7 @@ import dell1 from '../../src/assets/images/dell-1.png';
 const LandingPage = () => {
     return (
         <div>
-            <div className="first-sec">
+            <div className="main">
                 <div className="main-sec">
                     <div className="bg1 bg1position"></div>
                     <div className="bg2 bg2position"></div>
