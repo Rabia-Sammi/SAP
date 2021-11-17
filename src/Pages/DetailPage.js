@@ -15,12 +15,12 @@ const DeatailPage = () => {
                 <div className="nav-detail">
                     <div className="row">
                         <div className="col-6">
-                            <div className="review">
+                            <div className="prod">
                                 <div>
                                     <img src={sym} />
                                 </div>
-                                <div style={{ textAlign: 'center' }}>
-                                    <h1>Account Payable automation</h1>
+                                <div className="prod-name">
+                                    <h1>Account Payable Automation</h1>
                                     <h2>By Symbeo Inc.</h2>
                                 </div>
                             </div>
@@ -47,71 +47,71 @@ const DeatailPage = () => {
                 </div>
 
                 {/* <!-- End Nav Section --> */}
+            </div>
 
-                {/* <!-- Slider Section --> */}
-                <div className="s-section">
+            {/* <!-- Slider Section --> */}
+            <div className="s-section">
+                < div class="container">
                     <div className="row">
-                        <div className="col-12 col-lg-6 p-right">
-                            <h1>True invoice automation bridges the gap between manual and digital processing</h1>
-                            <h2>Solution Types</h2>
-                            <h3>Extension and Addons</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit veniam accusantium neque nemo
-                            velit veritatis sit perspiciatis dicta quod maxime?
+                        <div className="col-12 col-lg-6">
+                            <div className="s-text">
+                                <h1>Digital Customar Experience</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit veniam accusantium neque nemo
+                                velit veritatis sit perspiciatis dicta quod maxime?
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dignissimos mollitia harum distinctio fuga nemo, repudiandae animi error, sequi repellat vitae officia eius. Quo molestias incidunt animi doloribus dolorem aliquid, eligendi consequatur laboriosam cupiditate dignissimos magnam quis nemo quaerat nobis temporibus nesciunt at quia reiciendis est rem quos ea accusamus?</p>
-                            <button className="btn-blue">Get It Now</button>
+                                <button>Get It Now</button>
+                            </div>
                         </div>
-                        <div className="col-12 col-lg-6 p-left">
-                            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                                <div className="carousel-inner">
-                                    <div className="carousel-item active">
-                                        <img src={ss} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={ss} className="d-block w-100" alt="..." />
-                                    </div>
-                                    <div className="carousel-item">
-                                        <img src={ss} className="d-block w-100" alt="..." />
-                                    </div>
-                                </div>
-                                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                                    data-bs-slide="prev">
-                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span className="visually-hidden">Previous</span>
-                                </button>
-                                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                                    data-bs-slide="next">
-                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span className="visually-hidden">Next</span>
-                                </button>
+                        <div className="col-12 col-lg-6">
+                            <div className="s-img">
+                                <img src={ss}></img>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <!-- End Slider Section --> */}
+            </div>
+            {/* <!-- End Slider Section --> */}
 
-                {/* <!-- BnF Section --> */}
-                <div className="row">
-                    <div className="col">
-                        <div className="bnf">
-                            <h1>Benefits and Features</h1>
-                            <h2>BENEFITS</h2>
-                            <h3>Bridge the gap between paper and electronic invoices</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
+            {/* <!-- Benefit Section --> */}
+            <div class="benefit">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <h1>Key Benefits</h1>
+                            <div className="bnf">
+                                <div className="ben">
+                                    <h3>Bridge the gap between paper and electronic invoices</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
                                 reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
-                            <h3>Eliminate 80-90% of your effort</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
+                                </div>
+                                <div className="ben">
+                                    <h3>Bridge the gap between paper and electronic invoices</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
                                 reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
-                            <h3>Validate, automate and route to downstrem systems</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
+                                </div>
+                                <div className="ben">
+                                    <h3>Eliminate 80-90% of your effort</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
+                                reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
+                                </div>
+                                <div className="ben">
+                                    <h3>Validate, automate and route to downstrem systems</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
                                 reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptat provident laborum eligendi!</p>
-                            <a href="#">More Benefits</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
-                {/* <!-- End BnF --> */}
+            </div>
+            {/* <!-- End Benefit Section --> */}
+
                 {/* <!-- Features --> */}
                 <div className="features">
-                    <div className="row align-md">
+                <h1>Key Features</h1>
+                    <div className="container">
+                    <div className="row">
                         <div className="col-12 col-lg-6 p-right">
                             <h3>Virtual Mailroom Scanning and Classification </h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
@@ -133,6 +133,7 @@ const DeatailPage = () => {
                         voluptas dignissimos quo voluptate aut? Inventore, iste.</p>
                         </div>
                     </div>
+                    </div>
                 </div>
                 {/* <!-- End Features --> */}
 
@@ -152,8 +153,7 @@ const DeatailPage = () => {
                     <button className="btn-blue">Contact Support</button>
                 </div>
                 {/* <!-- End Pricing Section --> */}
-            </div>
-
+        
         </Fragment>
     )
 };

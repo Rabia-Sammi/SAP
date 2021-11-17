@@ -25,6 +25,9 @@ function App() {
           <Route path='/listing'>
             <Listing />
           </Route>
+          <Route path='/solutions/:id'>
+            <Listing />
+          </Route>
           <Route path='/detailpage'>
             <DetailPage />
           </Route>

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { filterActions } from '../store/filterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom';
 
 
 
@@ -21,7 +22,7 @@ const Solutions = () => {
     const fetchSol = useCallback(async () => {
 
         try {
-            const response = await fetch('https://sapapi.scrubskp.com/api/listing', { mode: 'cors' })
+            const response = await fetch('https://sapapi.scrubskp.com/api/Solution')
             if (!response.ok) {
                 throw new Error('Something went wrong!');
             }
@@ -84,12 +85,14 @@ const Solutions = () => {
     const allItems = fetchedSolutions.map((d) =>
         <div className="col item">
             <div className="card ">
-                <div className="card-body ">
+                <Link to='/detailPage'>
+                    <div className="card-body">
                     <img key={d} src={d.icon} />
                     <h2 key={d}>{d.name}</h2>
                     <p key={d}>{d.description}</p>
                     <h3 key={d}>Category: {d.category}</h3>
                 </div>
+                </Link>
             </div>
         </div>
     );
