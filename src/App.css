@@ -972,13 +972,13 @@ color: black;
 
 .nav-detail { color:grey; padding-top: 8px; padding-bottom: 12px;}
 .nav-detail ul{ display: flex;  justify-content: left;}
-.nav-detail li{ padding:7px;}
+.nav-detail li{ padding:8px 13px;}
 .nav-detail li:last-child{padding-right: 0px;}
-.nav-detail li a{
-    color: grey;
+.nav-detail li a {
+    color: #636464;
     font-family: 'corehumanistsans';
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
 }
 .nav-detail li:hover{border: 1px solid #007CB8;}
 .nav-detail .prod{display: flex; align-items: flex-end; }
