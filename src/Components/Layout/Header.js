@@ -38,10 +38,10 @@ const Header = () => {
                             <div class="col-2">
                                 <div onclick="openMenu(menu)"><span><i><FontAwesomeIcon icon={faBars}></FontAwesomeIcon> </i></span></div>
                             </div>
-                            <div class="col-7">
+                            <div class="col-6">
                             <img src={Logo}></img>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4 d-flex justify-content-end">
                                 <button><span><i><FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon></i></span></button>
                                 <button><span><i><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></i></span></button>
                             </div>

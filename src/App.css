@@ -1,17 +1,8 @@
 
-
-
 /*  Section Title Heading */
-h1{
-  font-size: 30px;
-  text-align: center;
-  padding:30px;
-  font-weight:bold;
-}
+h1{ font-size: 30px; text-align: center; padding:30px; font-weight:bold;}
 
-body{
-  font-family: 'bentonsansregular'!important;
-}
+body{ font-family: 'bentonsansregular'!important; }
 p{ font-size: 14px;}
 
 .sticky {
@@ -28,35 +19,16 @@ p{ font-size: 14px;}
 
 
 @media only screen and (max-width: 900px){
-  .main .header-mob{
-      display:block;
-      background-color: #221E1D;
-      padding: 15px 5px;
-  }
-  .header-mob span i{        
-  color: white;
-  font-size: 32px;
-  padding: 5px;
-  }
-  .header-mob button{
-      background:none;
-      display: contents;
-      border:none;
-  }
-  .header-mob button span i{
-  color: white;
-  font-size: 25px;
-  padding:5px;
-  }
-  .side-menu{
-      width:100% !important;
-  }
+  .desktop{display: none;}
+  .mobile{display: block;}
 
-  .main .main-sec .text-mob{
-      display:block;
-      text-align: center;
-     
-  }
+  .main .header-mob{ display:block; background-color: #221E1D; padding: 15px 5px;  }
+  .header-mob span i{ color: white; font-size: 32px; padding: 5px; }
+  .header-mob button{background:none;  display: contents; border:none;  }
+  .header-mob button span i{color: white; font-size: 25px; padding:5px;}
+  .side-menu{width:100% !important;}
+
+  .main .main-sec .text-mob{ display:block;text-align: center;}
   .main .main-sec .text-mob p{
       font-size: 33px;
       color:white;
@@ -64,22 +36,16 @@ p{ font-size: 14px;}
       font-weight: bold;
       padding:25px;
   }
-  .main .main-sec .text-mob button{
-      margin-top:60;
-  
-  }
+  .main .main-sec .text-mob button{ margin-top:60;}
 
   /* Hide Divs for mobile */
-  .main .header{
-      display:none;
-  }
-  .main .main-sec .text{
-      display:none;
-  }
-
+  .main .header{ display:none; }
+  .main .main-sec .text{ display:none; }
 }
 
 @media only screen and (min-width: 900px){
+  .desktop{display: block;}
+  .mobile{display: none;}
   .header-mob, .text-mob { display:none;}
   .main .header{ display: sticky;}
 }
@@ -94,14 +60,11 @@ p{ font-size: 14px;}
   padding-right: 21px;
 }
 
-.header .top{
-background-color: #221E1D; padding-top: 10px; padding-bottom:10px;
-}
+.header .top{ background-color: #221E1D; padding-top: 10px; padding-bottom:10px;}
 
 .header .top img{ padding-top:6px;}
 
 .header .searchbox{
-
   width:85%;
   background-color: white;
   border-radius: 5px;
@@ -111,22 +74,17 @@ background-color: #221E1D; padding-top: 10px; padding-bottom:10px;
 
 .header .searchbox span i{ color:lightgrey; }
 
-.header .searchbox span i:hover{
-  color: grey;
-}
+.header .searchbox span i:hover{ color: grey; }
 .header .searchbox input{
   width:90%;
   height: 35px;
   border: none;
   border-radius: 5px;
   padding-left:20px;
-
 }
-
 .header .top input::placeholder{ color:lightgrey;}
 
 .header .top button{
-
   border:none;
   align-items: center;
   display: flex;
@@ -139,10 +97,7 @@ background-color: #221E1D; padding-top: 10px; padding-bottom:10px;
   font-size: 25px;
   padding:5px 10px 5px 10px;
 }
-.header .top i{     
-  display: flex;
-  align-items: center;
-}
+.header .top i{display: flex; align-items: center;}
 
 .nav-bar{
   background-color: #383530;
@@ -158,14 +113,8 @@ padding-right: 5px;
 padding-left:5px;
 font-size: 15px;
 }
-.nav-bar .nav-menu > ul > li:hover{
-   text-shadow: 0px 0px 2px;
-}
-
-.nav-bar .nav-menu ul li:first-child{
-  margin-left:0px;
-  cursor: pointer;
-}
+.nav-bar .nav-menu > ul > li:hover{ text-shadow: 0px 0px 2px;}
+.nav-bar .nav-menu ul li:first-child{margin-left:0px; cursor: pointer;}
 
 .nav-bar .nav-menu ul a{
   color: white;
@@ -305,25 +254,11 @@ font-size: 15px;
 
 }
 
+.main-sec .text{ text-align: center; color:white;}
+.main-sec .text p{ font-size: 27px;}
+.main-sec .text span{ padding: 0px 3px; background: #063F5D; line-height:30px;}
+.main-sec .text span i{ padding: 5px 10px; font-size: 20px;}
 
-
-.main-sec .text{
-  font-size: 27px;
-  color:white;
-  text-align: center;
-}
-
-.main-sec .text span{
-  padding: 0px 3px;
-  background: #063F5D;
-  line-height:30px;
-}
-
-.main-sec .text span i{
-
-  padding: 5px 10px;
-  font-size: 20px;
-}
 .main-sec .text button , .main-sec .text-mob button{
   background-color: #E0A813;
   color:white;
@@ -981,12 +916,17 @@ color: black;
     text-decoration: none;
     font-size: 16px;
 }
+.nav-detail ul li:last-child a{padding-right: 10px;}
 .nav-detail li:hover{border: 1px solid #007CB8;}
 .nav-detail .prod{display: flex; align-items: flex-end; }
 .nav-detail .prod img{height:60px;}
 .nav-detail .prod .prod-name{ padding-left: 10px; }
 .nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 14px;text-align: left;}
 .nav-detail .prod .prod-name h2{color:grey; font-size: 14px; font-weight: normal;}
+.nav-detail .mobile {padding-top:20px;}
+.nav-detail .mobile a{color:black; text-decoration: none;}
+.nav-detail .mobile a{color:black; text-decoration: none;}
+.nav-detail .mobile a:hover{color: #3C7088; text-decoration: none;}
 
 .s-section { color:white; background-color: #3C7088 ; padding: 60px 0px 60px 0px; }
 .s-section .s-text{padding-right: 25px;}
@@ -1026,7 +966,7 @@ color: black;
 .tech h4{ font-size: 15px; }
 .tech p{ color: grey; padding: 0px;}
 .tech .txt{ padding-left: 50px;}
-.tech .activeBtn{padding-right: 12%;}
+.tech .activeBtn{padding-right: 7%;}
 .tech .info{ width:50%; padding:30px 0px 0px 80px;}
 
 .resource{ background-color:#3C7088; padding-bottom: 60px;}
@@ -1043,7 +983,7 @@ color: black;
   .benefit .ben {width: 100%; padding: 15px 0px 5px 0px;}
   .tech ul{display: block;}
   .tech ul li{padding: 0px;} 
-  .tech .info{ width: 100%; padding:30px 0px 0px 0px;}
+  .tech .info{ width: 100%; padding:30px 10px 0px 10px;}
   .tech h1{padding: 0px;}
   .resource .card{margin-bottom: 15px;} 
   .features img{ width: 100%; padding-bottom: 20px;}

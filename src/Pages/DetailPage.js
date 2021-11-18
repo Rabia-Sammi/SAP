@@ -5,6 +5,10 @@ import ss from '../../src/assets/images/ss.jpg';
 import f1 from '../../src/assets/images/f1.jpg';
 import sym from '../../src/assets/images/sym.jpg';
 
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,7 +19,7 @@ const DeatailPage = () => {
             <div className="container">
                 <div className="nav-detail">
                     <div className="row">
-                        <div className="col-6 col-lg-4">
+                        <div className="col-12 col-lg-4">
                             <div className="prod">
                                 <div>
                                     <img src={sym} />
@@ -26,23 +30,33 @@ const DeatailPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-6 col-lg-8 d-flex justify-content-end">
-                            <nav className="navbar navbar-expand-lg">
-                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button>
-                                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul className="navbar-nav">
-                                        <li><a href="#">At a Glance</a></li>
-                                        <li><a href="#">Features</a></li>
-                                        <li><a href="#">Pricing</a></li>
-                                        <li><a href="#">Technical Information</a></li>
-                                        <li><a href="#">Resources</a></li>
-                                        <li><a href="#">Reviews</a></li>
-                                        <li><a href="#">Publisher</a></li>
-                                    </ul>
-                                </div>
+                        <div className="col-lg-8 d-flex justify-content-end">
+                            <nav className="navbar navbar-expand-lg desktop">
+                                <ul className="navbar-nav">
+                                    <li><a href="#">At a Glance</a></li>
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">Technical Information</a></li>
+                                    <li><a href="#">Resources</a></li>
+                                    <li><a href="#">Reviews</a></li>
+                                    <li><a href="#">Publisher</a></li>
+                                </ul>
                             </nav>
+                        </div>
+                    </div>
+                    <div className="row ">
+                        <div className="col-12">
+                            <div className="mobile" >
+                                <OwlCarousel className="owl-theme" items={3} dots={false} margin={20}>
+                                    <div class="item"><a href="#">At a Glance</a></div>
+                                    <div class="item"><a href="#">Features</a></div>
+                                    <div class="item"><a href="#">Pricing</a></div>
+                                    <div class="item"><a href="#">Technical Information</a></div>
+                                    <div class="item"><a href="#">Resources</a></div>
+                                    <div class="item"><a href="#">Reviews</a></div>
+                                    <div class="item"><a href="#">Publisher</a></div>
+                                </OwlCarousel>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -140,9 +154,8 @@ const DeatailPage = () => {
 
             {/* Tech Information Section */}
             <div className="tech f-sec">
-               
                 <div className="container">
-                <h1>Technical Information</h1>
+                    <h1>Technical Information</h1>
                     <div className="row">
                         <div className="col-12 col-lg-2 pt-5">
                             <ul>
@@ -179,7 +192,7 @@ const DeatailPage = () => {
                                     <li className="info">
                                         <h4>Software-as-a-service solution</h4>
                                         <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates   
+                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                                         </p>
                                     </li>
                                 </ul>

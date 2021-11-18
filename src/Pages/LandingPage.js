@@ -1,6 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import img2 from '../../src/assets/images/img2.jpg';
 import img3 from '../../src/assets/images/img3.jpg';
 import imgProd from '../../src/assets/images/img-prod.jpg';
@@ -154,9 +158,9 @@ const LandingPage = () => {
             <div className="pop-sec">
                 <h1>Popular on Addon 2 ERP Store</h1>
                 <div className="container">
-                    <div className="menu">
+                    <div className="menu desktop">
                         <nav>
-                            <ul className="menu-nav owl-carousel owl-theme">
+                            <ul className="menu-nav">
                                 <li className="item" role="button" onclick="">ERP and Finance</li>
                                 <li className="item" role="button" onclick="">CRM and Customer Expirience</li>
                                 <li className="item" role="button" onclick="">Network and Spent Management</li>
@@ -173,6 +177,30 @@ const LandingPage = () => {
                                         <a className="dropdown-item" href="#">Something else here</a>
                                     </div>
                                 </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div className="menu mobile">
+                        <nav>
+                            <ul className="menu-nav">
+                            <OwlCarousel className="owl-theme" items={1} dots={false} margin={20}>
+                                <li className="item" role="button" onclick="">ERP and Finance</li>
+                                <li className="item" role="button" onclick="">CRM and Customer Expirience</li>
+                                <li className="item" role="button" onclick="">Network and Spent Management</li>
+                                <li className="item" role="button" onclick="">HR and People Engagement</li>
+                                <li className="dropdown">
+                                    <a className="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        More Categories<i className="fas fa-ellipsis-h"></i>
+                                    </a>
+                                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a className="dropdown-item" href="#">Action</a>
+                                        <a className="dropdown-item" href="#">Another action</a>
+                                        <div className="dropdown-divider"></div>
+                                        <a className="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                </OwlCarousel>
                             </ul>
                         </nav>
                     </div>
