@@ -1,5 +1,6 @@
 
 
+
 /*  Section Title Heading */
 h1{
   font-size: 30px;
@@ -8,10 +9,10 @@ h1{
   font-weight:bold;
 }
 
-
 body{
-  font-family:  'bentonsansregular' ;
+  font-family: 'bentonsansregular'!important;
 }
+p{ font-size: 14px;}
 
 .sticky {
   position: fixed;
@@ -1025,7 +1026,7 @@ color: black;
 .tech h4{ font-size: 15px; }
 .tech p{ color: grey; padding: 0px;}
 .tech .txt{ padding-left: 50px;}
-.tech .activeBtn{padding-right: 80px;}
+.tech .activeBtn{padding-right: 12%;}
 .tech .info{ width:50%; padding:30px 0px 0px 80px;}
 
 .resource{ background-color:#3C7088; padding-bottom: 60px;}

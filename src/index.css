@@ -1,18 +1,22 @@
  @font-face {
-  font-family: 'corehumanistsans';
+  font-family: 'corehumanistsans'; 
   src: url(./assets/fonts/CoreHumanistSans-Regular-webfont.woff2) format('woff2')
 }
 
 @font-face {
   font-family: 'bentonsansregular';
-  src: url(./assets/fonts/BentonSansRegular.otf) format('woff2')
+  src: local('bentonsansregular'), url(./assets/fonts/BentonSansRegular.woff) format('woff')
+}
+@font-face {
+  font-family: 'Opensans';
+  src: local('Opensans'), url(./assets/fonts/OpenSans-Regular.woff) format('woff')
 }
  
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Opensans', 'bentonsansregular', 'corehumanistsans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, 'corehumanistsans', 'bentonsansregular';
   -webkit-font-smoothing: antialiased;
