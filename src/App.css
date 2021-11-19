@@ -3,7 +3,7 @@
 h1{ font-size: 30px; text-align: center; padding:30px; font-weight:bold;}
 
 body{ font-family: 'bentonsansregular'!important; }
-p{ font-size: 14px;}
+p{ font-size: 15px; font-family: 'Opensans';}
 
 .sticky {
   position: fixed;
@@ -918,7 +918,7 @@ color: black;
 }
 .nav-detail ul li:last-child a{padding-right: 10px;}
 .nav-detail li:hover{border: 1px solid #007CB8;}
-.nav-detail .prod{display: flex; align-items: flex-end; }
+.nav-detail .prod{display: flex; align-items: center; padding-top: 10px;}
 .nav-detail .prod img{height:60px;}
 .nav-detail .prod .prod-name{ padding-left: 10px; }
 .nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 14px;text-align: left;}
@@ -931,9 +931,11 @@ color: black;
 .s-section { color:white; background-color: #3C7088 ; padding: 60px 0px 60px 0px; }
 .s-section .s-text{padding-right: 25px;}
 .s-section .s-text h1{padding:0px; margin-bottom:15px; font-size:40px; text-align: left;}
-.s-section .s-text p{padding: 20px 0px;}
 .s-section .s-img{padding-left: 45px; text-align: center;}
 .s-section img{max-width: 100%;}
+.s-section .star{padding-bottom: 18px;}
+.s-section .star span svg{color: rgb(158, 155, 155) ; font-size: 22px;}
+.s-section .star span{padding-right: 5px;}
 
 .s-section button{
     background-color: white ;

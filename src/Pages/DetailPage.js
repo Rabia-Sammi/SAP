@@ -1,20 +1,55 @@
 
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect, useCallback } from 'react';
+import {useParams} from 'react-router-dom';
 
 import ss from '../../src/assets/images/ss.jpg';
 import f1 from '../../src/assets/images/f1.jpg';
-import sym from '../../src/assets/images/sym.jpg';
 
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faStar} from '@fortawesome/free-regular-svg-icons';
 
 
-const DeatailPage = () => {
+const DetailPage = () => {
+
+    const params=useParams();
+    const [solDetail, setsolDetail] = useState([]);
+    
+    const fetchSolDetails = useCallback(async () => {    
+        try {
+            const response = await fetch(`https://sapapi.scrubskp.com/api/Solution/${params.id}`);
+            if (!response.ok) {
+                throw new Error('Something went wrong!');
+            }
+            // console.log(response);
+            const data = await response.json();
+            console.log(data);
+
+            setsolDetail(data);
+        }
+        catch (error) {
+            console.log("ERROR");
+            // setError(error.message);
+        }
+        // setIsLoading(false);
+    }, []);
+    useEffect(() => {
+        fetchSolDetails();
+    }, [fetchSolDetails]);
+ 
+        const prodImg=solDetail.iconUrl;
+        const prodName=solDetail.name;
+        const prodCompany=solDetail.companyName;
+        const prodHeading=solDetail.headline;
+        const prodDescription=solDetail.shortDescription;
+
+
+
     return (
+    
         <Fragment>
             <div className="container">
                 <div className="nav-detail">
@@ -22,11 +57,11 @@ const DeatailPage = () => {
                         <div className="col-12 col-lg-4">
                             <div className="prod">
                                 <div>
-                                    <img src={sym} />
+                                    <img src={prodImg} />
                                 </div>
                                 <div className="prod-name">
-                                    <h1>Account Payable Automation</h1>
-                                    <h2>By Symbeo Inc.</h2>
+                                    <h1>{prodName}</h1>
+                                    <h2>{prodCompany}</h2>
                                 </div>
                             </div>
                         </div>
@@ -70,11 +105,17 @@ const DeatailPage = () => {
                     <div className="row">
                         <div className="col-12 col-lg-6">
                             <div className="s-text">
-                                <h1>Digital Customer Experience</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit veniam accusantium neque nemo
-                                velit veritatis sit perspiciatis dicta quod maxime?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam dignissimos mollitia harum distinctio fuga nemo, repudiandae animi error, sequi repellat vitae officia eius. Quo molestias incidunt animi doloribus dolorem aliquid, eligendi consequatur laboriosam cupiditate dignissimos magnam quis nemo quaerat nobis temporibus nesciunt at quia reiciendis est rem quos ea accusamus?</p>
-                                <button>Get It Now</button>
+                                <h1>{prodHeading}</h1>
+                                <p>{prodDescription}</p>
+                                <div className="star">
+                                    <span ><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                                    <span ><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                                    <span ><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                                    <span ><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                                    <span ><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></span>
+                                    <span>(0)  Write a Review</span>
+                                </div>
+                                <button>View Pricing</button>
                             </div>
                         </div>
                         <div className="col-12 col-lg-6">
@@ -238,4 +279,4 @@ const DeatailPage = () => {
     )
 };
 
-export default DeatailPage;
+export default DetailPage;

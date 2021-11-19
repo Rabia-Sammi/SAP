@@ -35,7 +35,7 @@ const MainNavigation = () => {
 
     const menuItems = menu.map((d) =>{
     if (d=="Showcased Solutions")
-    return(<Link to='/listing'><li><a key={d}>{d}</a></li></Link>);
+    return(<Link to='/solution'><li><a key={d}>{d}</a></li></Link>);
      
      else if (d=="Popular on Store")
      return (<Link to='/DetailPage'><li><a key={d}>{d}</a></li></Link>);

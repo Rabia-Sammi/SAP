@@ -35,7 +35,7 @@ const Solutions = () => {
                     return c.name
                 });
                 loadedSolutions.push({
-                    id: key,
+                    id: data[key].id,
                     icon: data[key].iconUrl,
                     name: data[key].name,
                     description: data[key].description,
@@ -85,7 +85,7 @@ const Solutions = () => {
     const allItems = fetchedSolutions.map((d) =>
         <div className="col item">
             <div className="card ">
-                <Link to='/detailPage'>
+                <Link to={`/solution/${d.id}`}>
                     <div className="card-body">
                     <img key={d} src={d.icon} />
                     <h2 key={d}>{d.name}</h2>

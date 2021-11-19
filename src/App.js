@@ -22,14 +22,11 @@ function App() {
           <Route path='/landingpage' exact>
             <LandingPage />
           </Route>
-          <Route path='/listing'>
+          <Route path='/solution' exact>
             <Listing />
           </Route>
-          <Route path='/solutions/:id'>
-            <Listing />
-          </Route>
-          <Route path='/detailpage'>
-            <DetailPage />
+          <Route path='/solution/:id'>
+            <DetailPage/>
           </Route>
         </Switch>
         </Layout>
