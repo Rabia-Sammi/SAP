@@ -921,7 +921,7 @@ color: black;
 .nav-detail .prod{display: flex; align-items: center; padding-top: 10px;}
 .nav-detail .prod img{height:60px;}
 .nav-detail .prod .prod-name{ padding-left: 10px; }
-.nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 14px;text-align: left;}
+.nav-detail .prod .prod-name h1{ color:Black; padding:0px; font-size: 13px;text-align: left; font-family: 'Opensans';font-weight: bold;}
 .nav-detail .prod .prod-name h2{color:grey; font-size: 14px; font-weight: normal;}
 .nav-detail .mobile {padding-top:20px;}
 .nav-detail .mobile a{color:black; text-decoration: none;}

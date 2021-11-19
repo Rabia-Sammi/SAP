@@ -1,6 +1,6 @@
 
 import { Fragment, useState, useEffect, useCallback } from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import ss from '../../src/assets/images/ss.jpg';
 import f1 from '../../src/assets/images/f1.jpg';
@@ -10,15 +10,15 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar} from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
 
 
 const DetailPage = () => {
 
-    const params=useParams();
+    const params = useParams();
     const [solDetail, setsolDetail] = useState([]);
-    
-    const fetchSolDetails = useCallback(async () => {    
+
+    const fetchSolDetails = useCallback(async () => {
         try {
             const response = await fetch(`https://sapapi.scrubskp.com/api/Solution/${params.id}`);
             if (!response.ok) {
@@ -26,7 +26,6 @@ const DetailPage = () => {
             }
             // console.log(response);
             const data = await response.json();
-            console.log(data);
 
             setsolDetail(data);
         }
@@ -39,17 +38,50 @@ const DetailPage = () => {
     useEffect(() => {
         fetchSolDetails();
     }, [fetchSolDetails]);
- 
-        const prodImg=solDetail.iconUrl;
-        const prodName=solDetail.name;
-        const prodCompany=solDetail.companyName;
-        const prodHeading=solDetail.headline;
-        const prodDescription=solDetail.shortDescription;
+
+    const prodImg = solDetail.iconUrl;
+    const prodName = solDetail.name;
+    const prodCompany = solDetail.companyName;
+    const prodHeading = solDetail.headline;
+    const prodDescription = solDetail.shortDescription;
+    const benefits = solDetail.customerBenefits;
+    const features = solDetail.features;
+    let prodBenefits = [];
+    let prodFeatures = [];
+
+    //Benefits
+    for (const key in benefits) {
+        const ben =
+            <div className="ben">
+                <h3>{benefits[key].title}</h3>
+                <p>{benefits[key].description}</p>
+            </div>
+        prodBenefits.push(ben);
+    }
+
+    //Features
+    for (const key in features) {
+        const feature =
+            <div className="row">
+                <div className="col-12 col-lg-4 p-left">
+                    <img src={features[key].imageUrl} />
+                </div>
+                <div className="col-12 col-lg-8 p-right">
+                    <h3>{features[key].title}</h3>
+                    <p>{features[key].description}</p>
+                </div>
+            </div>
+        prodFeatures.push(feature);
+
+    }
+
+
+
 
 
 
     return (
-    
+
         <Fragment>
             <div className="container">
                 <div className="nav-detail">
@@ -135,26 +167,7 @@ const DetailPage = () => {
                         <div className="col-12">
                             <h1>Key Benefits</h1>
                             <div className="bnf">
-                                <div className="ben">
-                                    <h3>Bridge the gap between paper and electronic invoices</h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
-                                reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
-                                </div>
-                                <div className="ben">
-                                    <h3>Bridge the gap between paper and electronic invoices</h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
-                                reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
-                                </div>
-                                <div className="ben">
-                                    <h3>Eliminate 80-90% of your effort</h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
-                                reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptate provident laborum eligendi!</p>
-                                </div>
-                                <div className="ben">
-                                    <h3>Validate, automate and route to downstrem systems</h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aperiam aut, hic accusamus ea omnis
-                                reiciendis accusantium similique labore quasi cumque? Eius iusto voluptates eaque! Sit voluptat provident laborum eligendi!</p>
-                                </div>
+                                {prodBenefits}
                             </div>
                         </div>
                     </div>
@@ -167,28 +180,7 @@ const DetailPage = () => {
             <div className="features">
                 <div className="container">
                     <h1>Key Features</h1>
-                    <div className="row">
-                        <div className="col-12 col-lg-4 p-left">
-                            <img src={f1} />
-                        </div>
-                        <div className="col-12 col-lg-8 p-right">
-                            <h3>Virtual Mailroom Scanning and Classification </h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                quam provident culpa temporibus nostrum repellendus non voluptatibus odit beatae assumenda
-                        voluptas dignissimos quo voluptate aut? Inventore, iste.</p>
-                        </div>
-                    </div>
-                    <div className="row ">
-                        <div className="col-12 col-lg-4 p-left">
-                            <img src={f1} />
-                        </div>
-                        <div className="col-12 col-lg-8 p-right">
-                            <h3>Virtual Mailroom Scanning and Classification </h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                quam provident culpa temporibus nostrum repellendus non voluptatibus odit beatae assumenda
-                        voluptas dignissimos quo voluptate aut? Inventore, iste.</p>
-                        </div>
-                    </div>
+                    {prodFeatures}
                 </div>
             </div>
             {/* <!-- End Features --> */}
