@@ -1,9 +1,9 @@
 
 import { Fragment, useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,NavLink } from 'react-router-dom';
+
 
 import ss from '../../src/assets/images/ss.jpg';
-import f1 from '../../src/assets/images/f1.jpg';
 
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -17,8 +17,10 @@ const DetailPage = () => {
 
     const params = useParams();
     const [solDetail, setsolDetail] = useState([]);
+    const [loaded, setLoaded] = useState(false);
 
     const fetchSolDetails = useCallback(async () => {
+        console.log("before data==="+loaded);
         try {
             const response = await fetch(`https://sapapi.scrubskp.com/api/Solution/${params.id}`);
             if (!response.ok) {
@@ -26,8 +28,10 @@ const DetailPage = () => {
             }
             // console.log(response);
             const data = await response.json();
-
             setsolDetail(data);
+            console.log(data);
+            setLoaded(true);
+            console.log("after data++++"+ loaded);
         }
         catch (error) {
             console.log("ERROR");
@@ -39,6 +43,8 @@ const DetailPage = () => {
         fetchSolDetails();
     }, [fetchSolDetails]);
 
+
+
     const prodImg = solDetail.iconUrl;
     const prodName = solDetail.name;
     const prodCompany = solDetail.companyName;
@@ -46,8 +52,15 @@ const DetailPage = () => {
     const prodDescription = solDetail.shortDescription;
     const benefits = solDetail.customerBenefits;
     const features = solDetail.features;
+    const resources = solDetail.resources;
+    const techInfo = solDetail.technicalInformation;
+    let showInfoDetail=[];
     let prodBenefits = [];
     let prodFeatures = [];
+    let prodResources = [];
+    let prodTechInfo = [];
+    let prodTechDetail = [];
+    
 
     //Benefits
     for (const key in benefits) {
@@ -72,12 +85,61 @@ const DetailPage = () => {
                 </div>
             </div>
         prodFeatures.push(feature);
-
     }
 
+    //Resources
 
+    for (const key in resources) {
+        const res =
+            <div class="col-12 col-lg-4">
+                <div class="card">
+                    <p>Supply Chain Management</p>
+                    <h3>{resources[key].title}</h3>
+                    <a href={resources[key].resourceUrl}>Explore More</a>
+                </div>
+            </div>
+        prodResources.push(res);
+    }
 
+    //Tech Information
+    const [isActive, setIsActive] = useState(0);
+    const [techInfoDetails, setTechInfoDetails]=useState([]);
+    
+    const showTechDetailHandler = (key) => {
+        console.log("key"+key);
+        setIsActive(key);
+       const infoDet=techInfo[key].details;
+       
+        for (const d in infoDet){ 
+        const detail=
+            <li className="info">
+                <h4>{infoDet[d]}</h4>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
+                    quam provident
+                </p>
+            </li>
+            prodTechDetail.push(detail);
+        }
+        setTechInfoDetails(prodTechDetail);
+    }
+    
+    for (const key in techInfo){ 
+            const info =
+                <li><button
+                id={key} 
+                className={key===isActive ? 'activeBtn':''}
+                onClick={()=>showTechDetailHandler(key)}>{techInfo[key].name}</button></li> 
+                prodTechInfo.push(info);
+            } 
+            // useEffect(()=>{
+            //     showTechDetailHandler(0);
+            // }, [loaded])
+            
+            
 
+        
+    
 
 
     return (
@@ -186,48 +248,19 @@ const DetailPage = () => {
             {/* <!-- End Features --> */}
 
             {/* Tech Information Section */}
-            <div className="tech f-sec">
+            <div className="tech">
                 <div className="container">
                     <h1>Technical Information</h1>
                     <div className="row">
                         <div className="col-12 col-lg-2 pt-5">
                             <ul>
-                                <li><button className="activeBtn">General Information</button></li>
-                                <li><button>Deployment</button></li>
-                                <li><button>Operation</button></li>
-                                <li><button>Security</button></li>
-                                <li><button>Compliance</button></li>
+                                {prodTechInfo}
                             </ul>
                         </div>
                         <div className="col-12 col-lg-10 pt-5" style={{ backgroundColor: "#F0EFED" }} >
                             <div className="row">
                                 <ul className="bnf">
-                                    <li className="info">
-                                        <h4>User Assisstance Provided</h4>
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facil
-                                        </p>
-                                    </li>
-                                    <li className="info">
-                                        <h4>Deployed at scale on device</h4>
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                            quam provident culpa.
-                                        </p>
-                                    </li>
-                                    <li className="info">
-                                        <h4>Integrate with SAP cloud solutions</h4>
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                            quam provident
-                                        </p>
-                                    </li>
-                                    <li className="info">
-                                        <h4>Software-as-a-service solution</h4>
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                                        </p>
-                                    </li>
+                                {techInfoDetails}
                                 </ul>
                             </div>
                         </div>
@@ -241,27 +274,7 @@ const DetailPage = () => {
                 <div class="container">
                     <h1>Resources</h1>
                     <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <div class="card">
-                                <p>Supply Chain Management</p>
-                                <h3>SAP Certified Integration</h3>
-                                <a href="#">Explore More</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <div class="card">
-                                <p>Supply Chain Management</p>
-                                <h3>SAP Certified Integration</h3>
-                                <a href="#">Explore More</a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <div class="card">
-                                <p>Supply Chain Management</p>
-                                <h3>SAP Certified Integration</h3>
-                                <a href="#">Explore More</a>
-                            </div>
-                        </div>
+                        {prodResources}
                     </div>
                 </div>
             </div>
