@@ -1,6 +1,6 @@
 
 import { Fragment, useState, useEffect, useCallback } from 'react';
-import { useParams,NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 import ss from '../../src/assets/images/ss.jpg';
@@ -20,7 +20,7 @@ const DetailPage = () => {
     const [loaded, setLoaded] = useState(false);
 
     const fetchSolDetails = useCallback(async () => {
-        console.log("before data==="+loaded);
+        
         try {
             const response = await fetch(`https://sapapi.scrubskp.com/api/Solution/${params.id}`);
             if (!response.ok) {
@@ -29,12 +29,13 @@ const DetailPage = () => {
             // console.log(response);
             const data = await response.json();
             setsolDetail(data);
-            console.log(data);
+
             setLoaded(true);
-            console.log("after data++++"+ loaded);
+
+
         }
         catch (error) {
-            console.log("ERROR");
+            console.log("ERROR in catch");
             // setError(error.message);
         }
         // setIsLoading(false);
@@ -42,6 +43,13 @@ const DetailPage = () => {
     useEffect(() => {
         fetchSolDetails();
     }, [fetchSolDetails]);
+
+    useEffect(() => {
+        if (loaded == true) {
+            showTechDetailHandler(0);
+        }
+    }, [loaded])
+    
 
 
 
@@ -54,15 +62,18 @@ const DetailPage = () => {
     const features = solDetail.features;
     const resources = solDetail.resources;
     const techInfo = solDetail.technicalInformation;
-    let showInfoDetail=[];
+    const sliderImgs = solDetail.screenShots;
     let prodBenefits = [];
     let prodFeatures = [];
     let prodResources = [];
     let prodTechInfo = [];
     let prodTechDetail = [];
-    
+    let prodSlider=[];
+    const [isActive, setIsActive] = useState(0);
+    const [techInfoDetails, setTechInfoDetails] = useState([]);
 
-    //Benefits
+ 
+     //Benefits
     for (const key in benefits) {
         const ben =
             <div className="ben">
@@ -102,44 +113,72 @@ const DetailPage = () => {
     }
 
     //Tech Information
-    const [isActive, setIsActive] = useState(0);
-    const [techInfoDetails, setTechInfoDetails]=useState([]);
     
-    const showTechDetailHandler = (key) => {
-        console.log("key"+key);
-        setIsActive(key);
-       const infoDet=techInfo[key].details;
-       
-        for (const d in infoDet){ 
-        const detail=
+    for (const key in techInfo) {
+        if (key==0){
+            const info =
+            <li><button
+                id={key}
+                className={key==isActive ? 'activeBtn' : ''}
+                onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
+        prodTechInfo.push(info);    
+        }
+        else{
+        const info =
+            <li><button
+                id={key}
+                className={key === isActive ? 'activeBtn' : ''}
+                onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
+        prodTechInfo.push(info);
+        }
+    }
+
+    //Slider
+    for (const key in sliderImgs) {
+        if(key==0){
+            const imgs =
+        // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
+        <div className="carousel-item active">
+            <img src={sliderImgs[key]} className="d-block w-100" alt="..."/>
+       </div>
+       prodSlider.push(imgs);
+
+        }
+        else{
+        const imgs =
+        
+        // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
+        <div className="carousel-item">
+      <img src={sliderImgs[key]} className="d-block w-100" alt="..."/>
+       </div>
+        prodSlider.push(imgs);
+        }
+}
+
+
+
+const showTechDetailHandler = (key) => {
+    setIsActive(key);
+    const infoDet = techInfo[key].details;
+    for (const d in infoDet) {
+        const detail =
             <li className="info">
                 <h4>{infoDet[d]}</h4>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
                     quam provident
-                </p>
+            </p>
             </li>
-            prodTechDetail.push(detail);
-        }
-        setTechInfoDetails(prodTechDetail);
+        prodTechDetail.push(detail);
     }
-    
-    for (const key in techInfo){ 
-            const info =
-                <li><button
-                id={key} 
-                className={key===isActive ? 'activeBtn':''}
-                onClick={()=>showTechDetailHandler(key)}>{techInfo[key].name}</button></li> 
-                prodTechInfo.push(info);
-            } 
-            // useEffect(()=>{
-            //     showTechDetailHandler(0);
-            // }, [loaded])
-            
-            
+    setTechInfoDetails(prodTechDetail);
+}
+  
 
-        
-    
+
+
+
+
 
 
     return (
@@ -162,13 +201,13 @@ const DetailPage = () => {
                         <div className="col-lg-8 d-flex justify-content-end">
                             <nav className="navbar navbar-expand-lg desktop">
                                 <ul className="navbar-nav">
-                                    <li><a href="#">At a Glance</a></li>
-                                    <li><a href="#">Features</a></li>
-                                    <li><a href="#">Pricing</a></li>
-                                    <li><a href="#">Technical Information</a></li>
-                                    <li><a href="#">Resources</a></li>
-                                    <li><a href="#">Reviews</a></li>
-                                    <li><a href="#">Publisher</a></li>
+                                    <li id=""><a href="#">At a Glance</a></li>
+                                    <li id=""><a href="#">Features</a></li>
+                                    <li id=""><a href="#">Pricing</a></li>
+                                    <li id=""><a href="#">Technical Information</a></li>
+                                    <li id=""><a href="#">Resources</a></li>
+                                    <li id=""><a href="#">Reviews</a></li>
+                                    <li id=""><a href="#">Publisher</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -214,7 +253,24 @@ const DetailPage = () => {
                         </div>
                         <div className="col-12 col-lg-6">
                             <div className="s-img">
-                                <img src={ss}></img>
+                            <div id="carouselSlider" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner">
+                                {prodSlider}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlider" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselSlider" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                                {/* <OwlCarousel className="owl-theme" item={1} nav={true} stagePadding={0} margin={50} singleItem={true}>
+                                    {prodSlider}
+                                    
+                                </OwlCarousel>
+                             */}
                             </div>
                         </div>
                     </div>
@@ -252,15 +308,23 @@ const DetailPage = () => {
                 <div className="container">
                     <h1>Technical Information</h1>
                     <div className="row">
-                        <div className="col-12 col-lg-2 pt-5">
+                        <div className="col-12 col-lg-3">
+                            <div className="desktop">
                             <ul>
                                 {prodTechInfo}
                             </ul>
+                            </div>
+                            <div className="mobile">
+                            <ul><OwlCarousel className="owl-theme" item={3} margin={15} dots={false}>
+                                {prodTechInfo}
+                                </OwlCarousel>
+                            </ul>
+                            </div>
                         </div>
-                        <div className="col-12 col-lg-10 pt-5" style={{ backgroundColor: "#F0EFED" }} >
+                        <div className="col-12 col-lg-9" style={{ backgroundColor: "#F0EFED" }} >
                             <div className="row">
                                 <ul className="bnf">
-                                {techInfoDetails}
+                                    {techInfoDetails}
                                 </ul>
                             </div>
                         </div>

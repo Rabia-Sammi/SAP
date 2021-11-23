@@ -17,9 +17,8 @@ p{ font-size: 15px; font-family: 'Opensans';}
 .container{max-width:1250px!important;}
 }
 
-
 @media only screen and (max-width: 900px){
-  .desktop{display: none;}
+  .desktop{display: none!important;}
   .mobile{display: block;}
 
   .main .header-mob{ display:block; background-color: #221E1D; padding: 15px 5px;  }
@@ -510,8 +509,10 @@ font-size: 15px;
   font-weight: bold;
 }
 
+.f-sec .activeBtn{width: 21rem;}
+
 @media only screen and (max-width: 900px){ 
-  .f-sec .activeBtn{ padding-right: 8px;
+  .f-sec .activeBtn{ width: auto;
       position: initial;}
   .f-sec ul{display: flex; justify-content: space-evenly;}
   .f-sec ul li button{position: initial;text-align: center;}
@@ -846,7 +847,6 @@ color: black;
   border-radius: 5px;
   padding-top:10px;
   padding-bottom: 10px;
-  padding-right:140px;
   text-align: left;
   position: absolute;
 }
@@ -916,8 +916,8 @@ color: black;
     text-decoration: none;
     font-size: 16px;
 }
-.nav-detail ul li:last-child a{padding-right: 10px;}
-.nav-detail li:hover{border: 1px solid #007CB8;}
+/* .nav-detail ul li:last-child a{padding-right: 10px;} */
+.nav-detail li a:hover{border-bottom: 5px solid #007CB8; padding-bottom: 10px;}
 .nav-detail .prod{display: flex; align-items: center; padding-top: 10px;}
 .nav-detail .prod img{height:60px;}
 .nav-detail .prod .prod-name{ padding-left: 10px; }
@@ -931,19 +931,13 @@ color: black;
 .s-section { color:white; background-color: #3C7088 ; padding: 60px 0px 60px 0px; }
 .s-section .s-text{padding-right: 25px;}
 .s-section .s-text h1{padding:0px; margin-bottom:15px; font-size:40px; text-align: left;}
-.s-section .s-img{padding-left: 45px; text-align: center;}
-.s-section img{max-width: 100%;}
+/* .s-section .s-img{padding-left: 45px; text-align: center;} */
+.s-section img{max-width: 100%; height: 300px;}
 .s-section .star{padding-bottom: 18px;}
 .s-section .star span svg{color: rgb(158, 155, 155) ; font-size: 22px;}
 .s-section .star span{padding-right: 5px;}
-
-.s-section button{
-    background-color: white ;
-    color: black;
-    padding: 12px 25px;
-    border-radius: 6px;
-    border: none;
-}
+.s-section .s-text button{ background-color: white ;  color: black; padding: 12px 25px; border-radius: 6px; border: none; }
+.s-section #carouselSlider button span{background-color: black ;}
 
 .benefit{padding-top: 30px;  background-color: #FBFAF8;}
 .benefit h1{text-align: left; padding-left: 0px; padding-bottom: 0px;}
@@ -963,14 +957,14 @@ color: black;
 .p-left{padding-left: 50px;} 
 .p-right{padding-right: 50px;} 
 
-
+.tech {margin-bottom: 70px;}
 .tech h1{ text-align: left; padding-top: 0px; padding-left: 0px;}
 .tech h4{ font-size: 15px; }
 .tech p{ color: grey; padding: 0px;}
 .tech .txt{ padding-left: 50px;}
-.tech .activeBtn{padding-right: 10rem;}
+.tech .activeBtn{width: 21rem;} 
 .tech .info{ width:50%; padding:30px 0px 0px 80px;}
-.tech ul{ list-style: none;  padding: 0px; text-align: left;}
+.tech ul{ list-style: none;  padding: 0px; text-align: left; padding-top: 35px;}
 .tech ul li{padding-bottom: 50px; }
 .tech ul li button{
   border:none;
@@ -993,13 +987,21 @@ color: black;
 @media only screen and (max-width: 900px){
   
   .features .align-md{padding-bottom: 30px;}
+  
   .s-section .s-img{padding-left: 0px; padding-top: 20px;}
+  .s-section img{height: 200px;}
+  
   .benefit .ben {width: 100%; padding: 15px 0px 5px 0px;}
+  
   .tech ul{display: block;}
-  .tech ul li{padding: 0px;} 
+  .tech ul li{padding: 0px;}
+  .tech ul li button{position: relative ;}
   .tech .info{ width: 100%; padding:30px 10px 0px 10px;}
   .tech h1{padding: 0px;}
+  .tech .activeBtn{width: 100%;} 
+
   .resource .card{margin-bottom: 15px;} 
+  
   .features img{ width: 100%; padding-bottom: 20px;}
   .features .row{padding-bottom: 10px;}
 }
