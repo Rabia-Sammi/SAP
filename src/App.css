@@ -896,8 +896,10 @@ color: black;
 .listing .result .tags a{text-decoration: none;}
 .listing button{text-align: center;}
 
-
+.listing .card{height: 100%;}
+.listing .card h3{padding: 16px;}
 .listing .card a{text-decoration: none; color: white;}
+.listing .btn-section{text-align: center; padding-top: 50px;}
 
 @media only screen and (max-width: 900px){
   .filter .navbar-nav li a span {text-align: right; display: block; }

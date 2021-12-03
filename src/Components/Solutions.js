@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { filterActions } from '../store/filterSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -85,14 +85,14 @@ const Solutions = () => {
     const allItems = fetchedSolutions.map((d) =>
         <div className="col item">
             <div className="card ">
-                <Link to={`/solution/${d.id}`}>
-                    <div className="card-body">
-                    <img key={d} src={d.icon} />
-                    <h2 key={d}>{d.name}</h2>
-                    <p key={d}>{d.description}</p>
-                    <h3 key={d}>Category: {d.category}</h3>
-                </div>
+                <Link to={`/solution/${d.id}`} className="card-body">
+                    <div>
+                        <img key={d} src={d.icon} />
+                        <h2 key={d}>{d.name}</h2>
+                        <p key={d}>{d.description}</p>
+                    </div>
                 </Link>
+                <h3 key={d}>Category: {d.category}</h3>
             </div>
         </div>
     );
@@ -151,14 +151,15 @@ const Solutions = () => {
                     <div className="row  row-cols-1 row-cols-lg-3 owl-carousel owl-theme">
                         {renderSol()}
                     </div>
-                </div>
-                <div class="d-flex justify-content-center">
+                    <div class="btn-section">
                     <button class="yellowBtn">Get Started</button>
                 </div>
+                </div>
+                
             </div>
         </div>
 
     );
 };
 
-export default Solutions; 
+export default Solutions;
