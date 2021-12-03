@@ -20,7 +20,7 @@ const DetailPage = () => {
     const [loaded, setLoaded] = useState(false);
 
     const fetchSolDetails = useCallback(async () => {
-        
+
         try {
             const response = await fetch(`https://sapapi.scrubskp.com/api/Solution/${params.id}`);
             if (!response.ok) {
@@ -49,7 +49,7 @@ const DetailPage = () => {
             showTechDetailHandler(0);
         }
     }, [loaded])
-    
+
 
 
 
@@ -68,12 +68,12 @@ const DetailPage = () => {
     let prodResources = [];
     let prodTechInfo = [];
     let prodTechDetail = [];
-    let prodSlider=[];
+    let prodSlider = [];
     const [isActive, setIsActive] = useState(0);
     const [techInfoDetails, setTechInfoDetails] = useState([]);
 
- 
-     //Benefits
+
+    //Benefits
     for (const key in benefits) {
         const ben =
             <div className="ben">
@@ -113,67 +113,67 @@ const DetailPage = () => {
     }
 
     //Tech Information
-    
+
     for (const key in techInfo) {
-        if (key==0){
+        if (key == 0) {
             const info =
-            <li><button
-                id={key}
-                className={key==isActive ? 'activeBtn' : ''}
-                onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
-        prodTechInfo.push(info);    
+                <li><button
+                    id={key}
+                    className={key == isActive ? 'activeBtn' : ''}
+                    onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
+            prodTechInfo.push(info);
         }
-        else{
-        const info =
-            <li><button
-                id={key}
-                className={key === isActive ? 'activeBtn' : ''}
-                onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
-        prodTechInfo.push(info);
+        else {
+            const info =
+                <li><button
+                    id={key}
+                    className={key === isActive ? 'activeBtn' : ''}
+                    onClick={() => showTechDetailHandler(key)}>{techInfo[key].name}</button></li>
+            prodTechInfo.push(info);
         }
     }
 
     //Slider
     for (const key in sliderImgs) {
-        if(key==0){
+        if (key == 0) {
             const imgs =
-        // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
-        <div className="carousel-item active">
-            <img src={sliderImgs[key]} className="d-block w-100" alt="..."/>
-       </div>
-       prodSlider.push(imgs);
+                // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
+                <div className="carousel-item active">
+                    <img src={sliderImgs[key]} className="d-block w-100" alt="..." />
+                </div>
+            prodSlider.push(imgs);
 
         }
-        else{
-        const imgs =
-        
-        // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
-        <div className="carousel-item">
-      <img src={sliderImgs[key]} className="d-block w-100" alt="..."/>
-       </div>
-        prodSlider.push(imgs);
+        else {
+            const imgs =
+
+                // <div className="item"><img src={sliderImgs[key]} alt="Owl Image"/></div>
+                <div className="carousel-item">
+                    <img src={sliderImgs[key]} className="d-block w-100" alt="..." />
+                </div>
+            prodSlider.push(imgs);
         }
-}
-
-
-
-const showTechDetailHandler = (key) => {
-    setIsActive(key);
-    const infoDet = techInfo[key].details;
-    for (const d in infoDet) {
-        const detail =
-            <li className="info">
-                <h4>{infoDet[d]}</h4>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
-                    quam provident
-            </p>
-            </li>
-        prodTechDetail.push(detail);
     }
-    setTechInfoDetails(prodTechDetail);
-}
-  
+
+
+
+    const showTechDetailHandler = (key) => {
+        setIsActive(key);
+        const infoDet = techInfo[key].details;
+        for (const d in infoDet) {
+            const detail =
+                <li className="info">
+                    <h4>{infoDet[d]}</h4>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis saepe, voluptates
+                        quam provident
+                    </p>
+                </li>
+            prodTechDetail.push(detail);
+        }
+        setTechInfoDetails(prodTechDetail);
+    }
+
 
 
 
@@ -184,52 +184,54 @@ const showTechDetailHandler = (key) => {
     return (
 
         <Fragment>
-            <div className="container">
-                <div className="nav-detail">
-                    <div className="row">
-                        <div className="col-12 col-lg-4">
-                            <div className="prod">
-                                <div>
-                                    <img src={prodImg} />
+            <div class="top-bar">
+                <div className="container">
+                    <div className="nav-detail ">
+                        <div className="row">
+                            <div className="col-12 col-lg-4">
+                                <div className="prod">
+                                    <div>
+                                        <img src={prodImg} />
+                                    </div>
+                                    <div className="prod-name">
+                                        <h1>{prodName}</h1>
+                                        <h2>{prodCompany}</h2>
+                                    </div>
                                 </div>
-                                <div className="prod-name">
-                                    <h1>{prodName}</h1>
-                                    <h2>{prodCompany}</h2>
+                            </div>
+                            <div className="col-lg-8 d-flex justify-content-end align-items-center">
+                                <nav className="navbar navbar-expand-lg desktop sticky-top">
+                                    <ul className="navbar-nav">
+                                        <li id=""><a href="#">At a Glance</a></li>
+                                        <li id=""><a href="#">Features</a></li>
+                                        <li id=""><a href="#">Pricing</a></li>
+                                        <li id=""><a href="#">Technical Information</a></li>
+                                        <li id=""><a href="#">Resources</a></li>
+                                        <li id=""><a href="#">Reviews</a></li>
+                                        <li id=""><a href="#">Publisher</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div className="row ">
+                            <div className="col-12">
+                                <div className="mobile" >
+                                    <OwlCarousel className="owl-theme" items={3} dots={false} margin={20}>
+                                        <div class="item"><a href="#">At a Glance</a></div>
+                                        <div class="item"><a href="#">Features</a></div>
+                                        <div class="item"><a href="#">Pricing</a></div>
+                                        <div class="item"><a href="#">Technical Information</a></div>
+                                        <div class="item"><a href="#">Resources</a></div>
+                                        <div class="item"><a href="#">Reviews</a></div>
+                                        <div class="item"><a href="#">Publisher</a></div>
+                                    </OwlCarousel>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-8 d-flex justify-content-end">
-                            <nav className="navbar navbar-expand-lg desktop">
-                                <ul className="navbar-nav">
-                                    <li id=""><a href="#">At a Glance</a></li>
-                                    <li id=""><a href="#">Features</a></li>
-                                    <li id=""><a href="#">Pricing</a></li>
-                                    <li id=""><a href="#">Technical Information</a></li>
-                                    <li id=""><a href="#">Resources</a></li>
-                                    <li id=""><a href="#">Reviews</a></li>
-                                    <li id=""><a href="#">Publisher</a></li>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
-                    <div className="row ">
-                        <div className="col-12">
-                            <div className="mobile" >
-                                <OwlCarousel className="owl-theme" items={3} dots={false} margin={20}>
-                                    <div class="item"><a href="#">At a Glance</a></div>
-                                    <div class="item"><a href="#">Features</a></div>
-                                    <div class="item"><a href="#">Pricing</a></div>
-                                    <div class="item"><a href="#">Technical Information</a></div>
-                                    <div class="item"><a href="#">Resources</a></div>
-                                    <div class="item"><a href="#">Reviews</a></div>
-                                    <div class="item"><a href="#">Publisher</a></div>
-                                </OwlCarousel>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                {/* <!-- End Nav Section --> */}
+                    {/* <!-- End Nav Section --> */}
+                </div>
             </div>
 
             {/* <!-- Slider Section --> */}
@@ -253,19 +255,19 @@ const showTechDetailHandler = (key) => {
                         </div>
                         <div className="col-12 col-lg-6">
                             <div className="s-img">
-                            <div id="carouselSlider" className="carousel slide" data-bs-ride="carousel">
-                                <div className="carousel-inner">
-                                {prodSlider}
+                                <div id="carouselSlider" className="carousel slide" data-bs-ride="carousel">
+                                    <div className="carousel-inner">
+                                        {prodSlider}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlider" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSlider" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlider" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselSlider" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
                                 {/* <OwlCarousel className="owl-theme" item={1} nav={true} stagePadding={0} margin={50} singleItem={true}>
                                     {prodSlider}
                                     
@@ -310,15 +312,15 @@ const showTechDetailHandler = (key) => {
                     <div className="row">
                         <div className="col-12 col-lg-3">
                             <div className="desktop">
-                            <ul>
-                                {prodTechInfo}
-                            </ul>
+                                <ul>
+                                    {prodTechInfo}
+                                </ul>
                             </div>
                             <div className="mobile">
-                            <ul><OwlCarousel className="owl-theme" item={3} margin={15} dots={false}>
-                                {prodTechInfo}
+                                <ul><OwlCarousel className="owl-theme" item={3} margin={15} dots={false}>
+                                    {prodTechInfo}
                                 </OwlCarousel>
-                            </ul>
+                                </ul>
                             </div>
                         </div>
                         <div className="col-12 col-lg-9" style={{ backgroundColor: "#F0EFED" }} >
