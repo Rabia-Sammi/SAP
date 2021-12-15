@@ -2,9 +2,9 @@
 
 import MenuIcon from '../../assets/images/menu-white.png'
 import { useState, useEffect, useCallback } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 const MainNavigation = () => {
@@ -33,17 +33,17 @@ const MainNavigation = () => {
         fetchNav();
     }, [fetchNav]);
 
-    const menuItems = menu.map((d) =>{
-    if (d=="Showcased Solutions")
-    return(<Link to='/solution'><li><a key={d}>{d}</a></li></Link>);
-     
-     else if (d=="Popular on Store")
-     return (<Link to='/DetailPage'><li><a key={d}>{d}</a></li></Link>);
-     else
-     return(<li><a key={d}>{d}</a></li>);
-        
+    const menuItems = menu.map((d) => {
+        if (d == "Showcased Solutions")
+            return (<Link to='/solution'><li><a key={d}>{d}</a></li></Link>);
+
+        else if (d == "Popular on Store")
+            return (<Link to='/DetailPage'><li><a key={d}>{d}</a></li></Link>);
+        else
+            return (<li><a key={d}>{d}</a></li>);
+
     });
-    
+
     return (
         <div id="navDesk" className="nav-bar">
             <div className="container">
@@ -56,7 +56,7 @@ const MainNavigation = () => {
                                         <span>
                                             <img src={MenuIcon} />
                                         </span>Browse
-                                        </li>
+                                    </li>
                                 </div>
                                 {menuItems}
                             </ul>
